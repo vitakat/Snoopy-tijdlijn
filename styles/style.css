@@ -1,3 +1,38 @@
+:root {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --yellow:#ffd900;
+  --sky:#00000c;
+  --black:#000000;
+  
+ 
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #ffffff;
+    --color-fg: #000000;
+    --sky: linear-gradient(to top, white, #BFDDE5) ;
+  }
+}
+
+@font-face {
+  font-family: 'peanuts';
+  src: url('../fonts/peanuts_-webfont.woff2') format('woff2'),
+       url('../fonts/peanuts_-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'snoopy';
+  src: url('../fonts/snoopy_reg-webfont-webfont.woff2') format('woff2'),
+       url('../fonts/snoopy_reg-webfont-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 /*************/
 /* CSS RESET */
 /*************/
@@ -9,10 +44,16 @@
 
 body {
   margin:0;
+  font-family: 'peanuts';
+background:var(--sky)  ;
+min-height:100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor:url (../images/too384.cur) auto;
 }
 
 
@@ -23,23 +64,239 @@ button:not([disabled]) {
 /* CUSTOM PROPERTIES */
 /*********************/
 
-:root {
-  --color-headings:crimson
-}
-
-
 
 
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
+header {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  flex-direction: column;
+  border-color: black;
+ }
 
 h1 {
-  color:var(--color-headings);
+color:var(--color-headings); 
+border: 0.8em;
+border-color: black;
+padding: 2.5em;
+font-family:'peanuts';
+width: 1.5em;
+height:1.5em;
+bottom:10em;
+text-align: center;
+display: flex;
+line-height: 5vh;
+justify-content: center;
+align-items: center;
+position:absolute;
+background: var(--yellow);
+}
+
+h2{
+  font-family:'snoopy';
+  top: 18em;
+  position: absolute;
+}
+
+/* Woodstock animatie */
+
+
+.path2 {
+  stroke-dasharray: 20;
+}
+#test{
+  motion-path: path('M2.98,302.3c64.09,34.58,129.95-26.05,168.61-72.2,25.57-30.52,52.97-61.42,89.06-79.72,17.52-8.88,37.37-14.41,57.09-11.16,23.68,3.9,41.18,19.5,56.14,37.19,21.74,25.71,40.88,49.81,71.9,64.71,26.46,12.71,56.13,18.42,85.42,17.14,29.92-1.31,59.77-9.86,85.09-26.03,31.72-20.26,50.24-60.14,87.14-71.81,43.22-13.67,92.67,7.66,130.93,26.63,38.3,18.99,74.13,42.52,112.17,62.01,63,32.27,142.69,54.8,208.54,17.28,51.87-29.56,81.19-85.21,115.93-131.41,19.29-25.65,41.25-50.44,69.84-65.9,35.68-19.3,78.92-20.06,115.81-3.48,36.26,16.29,61.95,48.35,70.78,87.01,8.47,37.08,2.18,85.07-28.26,111.06-17.79,15.18-55.16,20.05-56.42-12.69-.71-18.38,12.09-37.29,30.11-41.91,51.45-13.2,81.25,48.83,100.46,84.57,32.74,60.93,91.16,97.37,161.17,96.74s130.76-39.53,172.19-92.06c24.29-30.8,37.52-70.52,65.94-97.94,25.48-24.58,63.01-32.88,97.28-26.52,35.57,6.6,63.69,28.09,79.62,60.43,14.79,30.02,21.75,66.14,47.03,89.9,46.97,44.16,117.62,12.85,158.94-23.14,56.13-48.88,92.49-130.51,174.84-139.54,74.37-8.15,141.45,42.06,210.14,61.95,30.39,8.8,67.07,15.24,97.2,2.18,29.32-12.71,38.25-42.74,53.51-68.09,50.87-84.47,139.88,21.13,195.43,44.84,58.56,24.99,127.32,23.82,185.8-.77,28.78-12.11,54.45-29.89,75.82-52.64,2.2-2.34-1.33-5.89-3.54-3.54-52.57,55.96-133.22,79.99-208.39,66.53-37.86-6.78-69.82-23.67-100.59-46.09-26.12-19.04-55.8-43.66-89.52-46.07-32.39-2.32-51.99,20.64-65.74,46.88-7.99,15.25-15.08,31.99-28.12,43.78-19.47,17.61-47.73,18.94-72.52,16.11-75.77-8.65-138.97-60.1-214.46-69.53-77.43-9.67-126.89,43.25-173,97.23-25.69,30.09-52.32,58.33-89.15,74.73-38.69,17.22-84.5,17.6-112.3-18.74-22.61-29.56-27.02-68.83-49.12-98.75-16.83-22.78-42.96-37.33-70.57-42.48-27.62-5.16-57.32-1.44-81.89,12.59-31.6,18.05-47.16,51.64-64.94,81.73-41.32,69.94-115.3,125.42-199.54,121.86-40.6-1.72-81.37-16.78-111.32-44.65-30.85-28.7-41.25-70.12-67.03-102.35-18.17-22.71-51.86-45.29-81.93-31.55-19.19,8.77-32.35,34.49-24.81,54.94,9.47,25.69,40.54,22.43,58.76,8.92,25.28-18.74,36.1-52.19,37.23-82.56,2.57-68.74-46.14-127.74-114.23-137.75-65.23-9.59-114.99,29.96-152.3,78.86-39.47,51.74-72.61,118.68-137.39,142.66-91.43,33.85-182.71-26.75-259.07-69.79-58.91-33.2-147.64-80.87-206.66-23.6-13.24,12.85-24.17,27.84-38.51,39.58-15.64,12.82-34,22.2-53.32,28.05-35.04,10.61-73.49,9.93-108.14-1.88-37.45-12.76-60.9-37.53-85.39-67.2-21.98-26.63-48.81-47.38-85.2-42.95-77.99,9.51-117.56,92.98-172.57,138-33.02,27.02-76.26,48.27-117.48,26.03-2.83-1.53-5.36,2.79-2.52,4.32h0Z');
+  offset-path: path('M2.98,302.3c64.09,34.58,129.95-26.05,168.61-72.2,25.57-30.52,52.97-61.42,89.06-79.72,17.52-8.88,37.37-14.41,57.09-11.16,23.68,3.9,41.18,19.5,56.14,37.19,21.74,25.71,40.88,49.81,71.9,64.71,26.46,12.71,56.13,18.42,85.42,17.14,29.92-1.31,59.77-9.86,85.09-26.03,31.72-20.26,50.24-60.14,87.14-71.81,43.22-13.67,92.67,7.66,130.93,26.63,38.3,18.99,74.13,42.52,112.17,62.01,63,32.27,142.69,54.8,208.54,17.28,51.87-29.56,81.19-85.21,115.93-131.41,19.29-25.65,41.25-50.44,69.84-65.9,35.68-19.3,78.92-20.06,115.81-3.48,36.26,16.29,61.95,48.35,70.78,87.01,8.47,37.08,2.18,85.07-28.26,111.06-17.79,15.18-55.16,20.05-56.42-12.69-.71-18.38,12.09-37.29,30.11-41.91,51.45-13.2,81.25,48.83,100.46,84.57,32.74,60.93,91.16,97.37,161.17,96.74s130.76-39.53,172.19-92.06c24.29-30.8,37.52-70.52,65.94-97.94,25.48-24.58,63.01-32.88,97.28-26.52,35.57,6.6,63.69,28.09,79.62,60.43,14.79,30.02,21.75,66.14,47.03,89.9,46.97,44.16,117.62,12.85,158.94-23.14,56.13-48.88,92.49-130.51,174.84-139.54,74.37-8.15,141.45,42.06,210.14,61.95,30.39,8.8,67.07,15.24,97.2,2.18,29.32-12.71,38.25-42.74,53.51-68.09,50.87-84.47,139.88,21.13,195.43,44.84,58.56,24.99,127.32,23.82,185.8-.77,28.78-12.11,54.45-29.89,75.82-52.64,2.2-2.34-1.33-5.89-3.54-3.54-52.57,55.96-133.22,79.99-208.39,66.53-37.86-6.78-69.82-23.67-100.59-46.09-26.12-19.04-55.8-43.66-89.52-46.07-32.39-2.32-51.99,20.64-65.74,46.88-7.99,15.25-15.08,31.99-28.12,43.78-19.47,17.61-47.73,18.94-72.52,16.11-75.77-8.65-138.97-60.1-214.46-69.53-77.43-9.67-126.89,43.25-173,97.23-25.69,30.09-52.32,58.33-89.15,74.73-38.69,17.22-84.5,17.6-112.3-18.74-22.61-29.56-27.02-68.83-49.12-98.75-16.83-22.78-42.96-37.33-70.57-42.48-27.62-5.16-57.32-1.44-81.89,12.59-31.6,18.05-47.16,51.64-64.94,81.73-41.32,69.94-115.3,125.42-199.54,121.86-40.6-1.72-81.37-16.78-111.32-44.65-30.85-28.7-41.25-70.12-67.03-102.35-18.17-22.71-51.86-45.29-81.93-31.55-19.19,8.77-32.35,34.49-24.81,54.94,9.47,25.69,40.54,22.43,58.76,8.92,25.28-18.74,36.1-52.19,37.23-82.56,2.57-68.74-46.14-127.74-114.23-137.75-65.23-9.59-114.99,29.96-152.3,78.86-39.47,51.74-72.61,118.68-137.39,142.66-91.43,33.85-182.71-26.75-259.07-69.79-58.91-33.2-147.64-80.87-206.66-23.6-13.24,12.85-24.17,27.84-38.51,39.58-15.64,12.82-34,22.2-53.32,28.05-35.04,10.61-73.49,9.93-108.14-1.88-37.45-12.76-60.9-37.53-85.39-67.2-21.98-26.63-48.81-47.38-85.2-42.95-77.99,9.51-117.56,92.98-172.57,138-33.02,27.02-76.26,48.27-117.48,26.03-2.83-1.53-5.36,2.79-2.52,4.32h0Z');
+  animation: sweep 16s linear infinite;
+  overflow: visible;
+}
+
+#vleugel {
+  transform: rotate(90deg) translateX(-62%);
+  width: 0px;
+  height: 0px;
+  line-height: 0;
+  position: absolute;
+  animation-name: reverse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-origin: 0% 0%;
+  z-index: -1;
+}
+
+#vleugel:after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 30px;
+  transform: translateY(-50%);
+}
+
+#vleugel2 {
+  width: 4vw;
+  height: 2vh;
+  line-height: 3em;
+}
+
+@keyframes sweep {
+  0% {
+    motion-offset: 0;
+    offset-distance: 0;
+  }
+
+  to {
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
+}
+
+@keyframes reverse {
+ 0%{
+  transform: rotate(0deg) translateX(0);
+} 
+50%{
+  transform: rotate(-2deg) translateX(-0.3em);
+}
+100%{
+    transform: rotate(0deg)translateX(0);
+}
 }
 
 
-/* ... */
+/* De snoopy knopjes lijst */
 
 
+ ol{
+  display: flex;
+  flex-direction: row; 
+  flex-grow: 1;
+  top:15em;
+  justify-content: space-between;
+  font-family:'peanuts';
+  position: relative;
+ }
+ button{
+  border: none;
+  background:none;
+ }
+li{
+  font-family:'snoopy';
+  list-style: none;
+  font-size: larger;
+}
+a, button{
+ font-family: 'snoopy';
+ text-decoration: none;
+/* color:black;
+border-color: black;
+padding: 0.5em;
+background-color: #ffd900;
+border-radius: 50%; */
+/* border: solid 0.1em; */
+/* border-style: outset; */
+/* width: 2em;
+height: 3em; */
+
+}
+
+
+img:nth-of-type(2) {
+  position: relative;
+  bottom:2em;
+  left:5em;
+  animation-name: snoopys;
+  animation-duration:50s;
+  background-image: url("../images/snoop1b.png");
+}
+
+img:nth-of-type(3) {
+  position: relative;
+  bottom:2em;
+  left:7em;
+  top:1em;
+}
+
+img:nth-of-type(1):hover,img:nth-of-type(2), img:nth-of-type(3) {
+scale:120%;
+}
+
+
+/* @keyframes snoopys {
+  0%  {top: 0px; left: 0px;} 
+  25%  {top: 0px; left: 30px;}
+  50%  {top: 30px; left: 30px;}
+  75%  {top: 30px; left: 0px; }
+  100% {top: 0px; left: 0px; }
+} */
+
+img:nth-of-type(2) {
+  position: relative;
+  bottom:22em;
+  left:5em;
+
+}
+
+
+
+li:nth-of-type(2) button.Geklikt img {
+  content:url("../images/snoop1976b.png");
+}
+
+li:nth-of-type(1) button.veranderen img {
+  content:url("../images/snoop1b.png");
+}
+
+#wolk1{
+  width:10%;
+  height:10%;
+  left:15em;
+  top: 5em;
+  animation-name: wolk;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;  
+  animation-duration:10s infinite linear; 
+  position:absolute;
+}
+#wolk2{
+  width:25%;
+  height:25%;
+  left:27em;
+  top: 8em;
+  animation-name: wolk;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+#wolk3{
+  width:14%;
+  height:14%;
+  left:50em;
+  top: 5em;
+  animation-name: wolk;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  position:absolute;
+}
+/* 
+#wolk3, #wolk2, #wolk1  {
+  animation-name: wolk;
+  animation-duration:10s infinite linear; 
+} */
+
+@keyframes wolk {
+  from{transform: translate3d(-130px,0,0)}  
+  to{transform: translate3d(1900px,0,0)}  
+} 
+/***dark mode***/
+
+
+
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
