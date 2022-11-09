@@ -1,13 +1,20 @@
 :root {
   --color-bg: #000000;
   --color-fg: #ffffff;
-  --yellow:#ffd900;
-  --sky:#00000c;
-  --black:#000000;
+  --geel:#ffd900;
+  --lucht:#00000c;
+  --zwart:#000000;
+  --wit:white;
+  --koudelucht:#BDDCE1;
   
  
 }
-@media (prefers-color-scheme: light) {
+
+/***dark mode***/
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}@media (prefers-color-scheme: light) {
   :root {
     --color-bg: #ffffff;
     --color-fg: #000000;
@@ -33,37 +40,21 @@
   font-style: normal;
 
 }
-/*************/
-/* CSS RESET */
-/*************/
+
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
-body {
-  margin:0;
-  font-family: 'peanuts';
-background:var(--sky)  ;
-min-height:100%;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  max-width: 100%;
-}
+
 
 button:not([disabled]) {
-  cursor:url (../images/too384.cur) auto;
+  cursor:url ("/images/too384.cur") auto;
 }
 
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-
+button:active{
+cursor:url("../images/cursor.cur") auto;}
 
 
 
@@ -75,35 +66,95 @@ header {
   justify-content: center;
   place-items: center;
   flex-direction: column;
-  border-color: black;
+  /* height: 30vh; */
+  top: 0;
  }
-
-h1 {
-color:var(--color-headings); 
-border: 0.8em;
-border-color: black;
-padding: 2.5em;
-font-family:'peanuts';
-width: 1.5em;
-height:1.5em;
-bottom:10em;
-text-align: center;
-display: flex;
-line-height: 5vh;
-justify-content: center;
-align-items: center;
-position:absolute;
-background: var(--yellow);
+body {
+  margin:0;
+  font-family: 'peanuts';
+  background:var(--sky);
+  /* min-height:100%; */
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  overflow: hidden;
+  max-width: 100%;
 }
+h1 {
+  padding: 2em;
+  font-family:'peanuts';
+  width: 1.5em;
+  height:1.5em;bottom:13em;text-align: center;
+  display: flex;
+  line-height: 5vh;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  background: var(--geel);color: var(--wit);
+  text-shadow:2px 2px black;
+  z-index: 1;}
 
 h2{
   font-family:'snoopy';
-  top: 18em;
+  top: 8em;
   position: absolute;
+  z-index: 2;
 }
 
-/* Woodstock animatie */
+/* Woodstock animatie bovenaan*/
 
+/* svg kleuren*/
+.cls-1 {
+  fill: #fadc15;
+  }
+
+  .cls-2 {
+  fill: #050605;
+  }
+
+  .cls-3 {
+  fill: #f3d61b;
+  }
+
+  .cls-4 {
+  fill: #0b0a08;
+  }
+
+  .cls-5 {
+  fill: #edd01d;
+  }
+
+  .cls-6 {
+  fill: #fcdd17;
+  }
+
+  .cls-7 {
+  fill: #0c0c08;
+  }
+
+  .cls-8 {
+  fill: #0a0907;
+  }
+
+  .cls-9 {
+  fill: #090806;
+  }
+
+  .cls-10 {
+  fill: #f4d71a;
+  }
+
+  .cls-11 {
+  fill: #080806;
+  }
+
+  .cls-12 {
+  fill: #f1d51d;
+  }
+  .spraak1 {
+    fill: #fff;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+  }
 
 .path2 {
   stroke-dasharray: 20;
@@ -172,12 +223,15 @@ h2{
 
  ol{
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   flex-grow: 1;
-  top:15em;
+  bottom: 3em;
+  align-items: flex-end;
   justify-content: space-between;
   font-family:'peanuts';
+  z-index: 2;
   position: relative;
+  height: 100%;
  }
  button{
   border: none;
@@ -191,38 +245,12 @@ li{
 a, button{
  font-family: 'snoopy';
  text-decoration: none;
-/* color:black;
-border-color: black;
-padding: 0.5em;
-background-color: #ffd900;
-border-radius: 50%; */
-/* border: solid 0.1em; */
-/* border-style: outset; */
-/* width: 2em;
-height: 3em; */
 
 }
 
 
-img:nth-of-type(2) {
-  position: relative;
-  bottom:2em;
-  left:5em;
-  animation-name: snoopys;
-  animation-duration:50s;
-  background-image: url("../images/snoop1b.png");
-}
 
-img:nth-of-type(3) {
-  position: relative;
-  bottom:2em;
-  left:7em;
-  top:1em;
-}
-
-img:nth-of-type(1):hover,img:nth-of-type(2), img:nth-of-type(3) {
-scale:120%;
-}
+ol li button img:hover {scale:120%;cursor: pointer;}
 
 
 /* @keyframes snoopys {
@@ -233,70 +261,153 @@ scale:120%;
   100% {top: 0px; left: 0px; }
 } */
 
-img:nth-of-type(2) {
-  position: relative;
-  bottom:22em;
-  left:5em;
-
+li:nth-of-type(4) img{
+width: 60%;
+height:60%;
 }
 
 
-
-li:nth-of-type(2) button.Geklikt img {
-  content:url("../images/snoop1976b.png");
+body.detailstonen li button:not(.veranderen) {
+  opacity:0;
+  pointer-events: none;
 }
+body.detailstonen header:not(.veranderen) {
+  display:none;}
+
 
 li:nth-of-type(1) button.veranderen img {
   content:url("../images/snoop1b.png");
 }
+
+body.snoopy1 {
+  background: var(--geel);
+}
+
+/*snoopys zelf*/
+
+li:nth-of-type(2) button.veranderen img {
+  content:url("../images/snoop2b.png");
+}
+body.snoopy2 {
+  background: var(--zwart);
+}
+
+li:nth-of-type(3) button.veranderen img {
+  content:url("../images/snoop1976b.png");
+}
+body.snoopy3 {
+  background: var(--koudelucht);
+}
+
+li:nth-of-type(4) button.veranderen img {
+  content:url("../images/snoop4b.png");
+}
+body.snoopy4 {
+  background-image: url("../images/achtergrond1.png");
+
+}
+
+
+/**Wolken**/
 
 #wolk1{
   width:10%;
   height:10%;
   left:15em;
   top: 5em;
-  animation-name: wolk;
-  animation-duration: 50s;
-  animation-iteration-count: infinite;  
-  animation-duration:10s infinite linear; 
-  position:absolute;
 }
+
 #wolk2{
   width:25%;
   height:25%;
   left:27em;
   top: 8em;
-  animation-name: wolk;
-  animation-duration: 50s;
-  animation-iteration-count: infinite;
-  position: absolute;
 }
+
 #wolk3{
   width:14%;
   height:14%;
   left:50em;
-  top: 5em;
-  animation-name: wolk;
-  animation-duration: 50s;
-  animation-iteration-count: infinite;
-  position:absolute;
+  top: 6em;
 }
-/* 
+
+.wolk-1,.wolk-2,.wolk-3{
+  fill:var(--wit);
+}
+
 #wolk3, #wolk2, #wolk1  {
   animation-name: wolk;
-  animation-duration:10s infinite linear; 
-} */
+  animation-duration:10s infinite linear;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
 
 @keyframes wolk {
   from{transform: translate3d(-130px,0,0)}  
-  to{transform: translate3d(1900px,0,0)}  
+  to{transform: translate3d(300px,0,0)}  
 } 
-/***dark mode***/
+
+/**Foto's voor bepaalde achtergronden*/
+img :nth-of-type(5){
+  display: none;
+}
+
+body main > img:first-of-type {
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  object-position: 
+  bottom;
+  height: 100vh;}
+
+body > svg {
+    z-index: 1;
+}
+
+main {
+    z-index: 2;
+    height: 100vh;
+}
+
+body > svg:first-of-type {
+    position: absolute;
+}
+
+body.detailstonen main > img:first-of-type {
+    display: none;
+}
+body.detailstonen.snoopy4 main > img:first-of-type{
+  display:flex;
+}
+
+body.detailstonen.snoopy3 > main > img:last-of-type {
+  position: absolute;
+  bottom: 0;
+}
 
 
-
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
+body.detailstonen.snoopy1 > main > svg:last-of-type {
+  position: absolute;
+  opacity: 1;
+  width: 20em;
+  height:20em;
+  bottom: 0.2em;
+  top:18em;
+  left:0;
+}
+body.detailstonen.snoopy1 > main > img:last-of-type {
+  position: absolute;
+  opacity: 1;
+  width: 50em;
+  height:30em;
+  bottom: 3em;
+  right:3em;
+  left:15em;
+}
+text{
+  font-family: 'snoopy';
+  font-size: 50pt;
 }
