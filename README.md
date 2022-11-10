@@ -68,10 +68,10 @@ Mijn startniveau is blauw
 
   ### Bevinding 6:
   Lijkt te veel op een tijdlijn
-  <img src="../tijdlijn/readme-images/tweedepagina.png" width="375px" alt="tweede ontwikkeling in de pagina 'knoppen'">  
+  <img src="/readme-images/tweedepagina.png" width="375px" alt="tweede ontwikkeling in de pagina 'knoppen'">  
   #### oplossing:
   Snoopy fases als actuele snoopy's uit de geschiedenis weergegeven
-  <img src="../tijdlijn/readme-images/derdepagina.png" width="375px" alt="derde ontwikkeling in de pagina met snoopys">  
+  <img src="/readme-images/derdepagina.png" width="375px" alt="derde ontwikkeling in de pagina met snoopys">  
 </details>
 
 
