@@ -48,7 +48,7 @@ Mijn startniveau is blauw
   Tip: Je kan de "comic" vormgeving aanhouden met vierkante blokken en horizontal scrolling
   #### oplossing:
   Ik heb de ordered list in een flexbox gestopt en deze wordt horizontaal weergegeven
-  <img src="readme-images/eerstepagina.jpg" width="375px"; alt="eerste ontwikkeling in de pagina, horizontale lijst">
+  <img src="readme-images/eerstepagina.png" width="375px"; alt="eerste ontwikkeling in de pagina, horizontale lijst">
 
   ### Bevinding 3:
   Je zou ook de tekenstijl kunnen toevoegen en gebruik maken van zwart/wit van de oude snoopy
