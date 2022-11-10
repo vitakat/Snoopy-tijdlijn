@@ -178,6 +178,15 @@ h2{
     stroke-miterlimit: 10;
   }
 
+
+  /*/De animatie van Woodstock, voorbeeld uit:
+  
+  1. Graham, G. (2019, 4 december). offset-path. CSS-Tricks. https://css-tricks.com/almanac/properties/o/offset-path/
+
+  /*/
+
+
+
 .path2 {
   stroke-dasharray: 20;
 }
