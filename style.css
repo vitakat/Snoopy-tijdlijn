@@ -630,11 +630,11 @@ body.detailstonen.snoopy2 > main > img:nth-last-of-type(2) {
 body.detailstonen.snoopy3 > main > img:nth-last-of-type(3) {
   position: absolute;
   opacity: 1;
-  width: 61em;
-  height:27em;
-  bottom:18em;
-  right:3em;
-  left:25em;
+    width: 61em;
+    height: 27em;
+    bottom: 10em;
+    right: 3em;
+    left: 20em;
 }
 
 
