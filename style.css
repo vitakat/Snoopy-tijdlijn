@@ -567,9 +567,9 @@ body.detailstonen.snoopy3 > main > svg:nth-last-of-type(3) {
   opacity: 1;
   width: 20em;
   height:20em;
-  bottom:0;
-  top:29em;
-  left:42em;  
+  bottom:2em;
+  top:20em;
+  left:34em;  
 }
 
 
@@ -628,13 +628,13 @@ body.detailstonen.snoopy2 > main > img:nth-last-of-type(2) {
 
 
 body.detailstonen.snoopy3 > main > img:nth-last-of-type(3) {
-  position: absolute;
-  opacity: 1;
-    width: 61em;
-    height: 27em;
-    bottom: 11em;
-    right: 3em;
-    left: 6em;
+    position: absolute;
+    opacity: 1;
+    width: 34em;
+    height: 23em;
+    bottom: 14em;
+    right: 28em;
+    left: 50em;
 }
 
 
